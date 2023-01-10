@@ -2,7 +2,6 @@ import { LightningElement,api,track, wire } from 'lwc';
 import {NavigationMixin} from 'lightning/navigation'; 
 import getChildAccounts from '@salesforce/apex/AccountHirerachy.getChildAccounts';
 import getParentAccount from '@salesforce/apex/AccountHirerachy.getParentAccount';
-import AccountHirerachy from '@salesforce/apex/AccountHirerachy.AccountHirerachy'
 
 export default class AccountHirerach extends NavigationMixin(LightningElement) {
     @api recordId;

@@ -1,0 +1,36 @@
+
+<template>
+    
+    <lightning-card title="Account Hirerachy" >
+
+        <lightning-accordion class="example-accordion" >
+
+
+            <lightning-accordion-section label="Parent Account" >
+                <template for:each={parentAcc} for:item="parAcc"> 
+                    <lightning-card class="info-card" variant="narrow" key={parAcc.ParentId} icon-name="standard:account">
+                        <!-- <h6 slot="title">{parAcc.Parent.Name}</h6> -->
+                        <lightning-button class="rec-name-btn" label={parAcc.Parent.Name} onclick={viewRecordFun} value={parAcc.ParentId} slot="title"></lightning-button>
+                    </lightning-card>
+                </template>
+ 
+
+            </lightning-accordion-section>
+
+            <lightning-accordion-section label="Child Accounts" >
+
+                <template for:each={childAccList} for:item="ChildAcc">
+                    <lightning-card variant="narrow"  key={ChildAcc.Id} icon-name="standard:account">
+                     <lightning-button class="rec-name-btn"  label={ChildAcc.Name} onclick={viewRecordFun} value={ChildAcc.Id} slot="title"></lightning-button>
+                     
+            
+                    </lightning-card>
+                </template>
+
+            </lightning-accordion-section>
+
+        </lightning-accordion>
+    </lightning-card>
+    
+</template>
+
